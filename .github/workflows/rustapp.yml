@@ -19,7 +19,7 @@ jobs:
         args: --release --all-features
     - name: Lint
       run: |
-        make lint
+        cargo install clippy && make lint
     - name: Run make file
       run: |
         make test code-style code-lint
