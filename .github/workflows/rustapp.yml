@@ -8,17 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions-rs/toolchain@v1
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: setup
+      uses: actions-rs/toolchain@v1
       with:
         toolchain: nightly
-        components: clippy
+        components: clippy, rustfmt
         override: true
-    - uses: actions-rs/cargo@v1
+    - name: build
+      uses: actions-rs/cargo@v1
       with:
         command: build
         args: --release --all-features
-    - uses: actions-rs/cargo@v1
+    - name: test
+      uses: actions-rs/cargo@v1
       with:
         command: test
         args: --all-features --no-fail-fast
@@ -26,15 +30,13 @@ jobs:
         CARGO_INCREMENTAL: '0'
         RUSTFLAGS: '-Zprofile -Ccodegen-units=1 -Cinline-threshold=0 -Clink-dead-code -Coverflow-checks=off -Cpanic=abort -Zpanic_abort_tests'
         RUSTDOCFLAGS: '-Zprofile -Ccodegen-units=1 -Cinline-threshold=0 -Clink-dead-code -Coverflow-checks=off -Cpanic=abort -Zpanic_abort_tests'
-    - uses: actions-rs/grcov@v0.1
-    - name: Coveralls upload
+    - name: coverage report
+      uses: actions-rs/grcov@v0.1
+    - name: coveralls upload
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path-to-lcov: ${{ steps.coverage.outputs.report }}
-    - name: Lint
+    - name: lint
       run: |
         make lint
-    - name: Run make file
-      run: |
-        make test code-style code-lint
