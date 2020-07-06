@@ -8,7 +8,7 @@ Simple rust boiler plate project. Main features:
 * Requirements management.
 * Basic make, .gitignore and other configuration files.
 
-[![Build Status](https://github.com/alexanderwillner/rust-boilerplate/workflows/Build-Test/badge.svg)](https://github.com/AlexanderWillner/rust-boilerplate/actions) [![Build Status](https://travis-ci.org/AlexanderWillner/rust-boilerplate.svg?branch=master)](https://travis-ci.org/AlexanderWillner/rust-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/AlexanderWillner/rust-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/AlexanderWillner/rust-boilerplate?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AlexanderWillner/rust-boilerplate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AlexanderWillner/rust-boilerplate/?branch=master)
+[![Build Status](https://github.com/alexanderwillner/rust-boilerplate/workflows/Build-Test/badge.svg)](https://github.com/AlexanderWillner/rust-boilerplate/actions) [![Coverage Status](https://coveralls.io/repos/github/AlexanderWillner/rust-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/AlexanderWillner/rust-boilerplate?branch=master)
 
 ## Examples
 
