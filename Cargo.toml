@@ -1,0 +1,21 @@
+[package]
+name = "tmpl"
+description = "Rust Template"
+version = "0.1.0"
+authors = ["Alexander Willner <alex@willner.ws>"]
+edition = "2018"
+repository = "https://todo"
+homepage = "https://todo"
+documentation = "http://todo"
+license = "MIT"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = { version = "0.4", features = ["std"] }
+env_logger = { version = "0.7" }
+
+[features]
+default = []
+dev = []
