@@ -11,7 +11,8 @@
 TARGET=target/debug/
 TARGET_HTML=html
 
-.PHONY: help
+.PHONY: help license
+
 help: ## Print help for each target
 	$(info Rust Makefile)
 	$(info =============)
@@ -33,7 +34,7 @@ clean: ## Run cleanup
 	@rm -rf "$(TARGET_HTML)"
 	@cargo clean
 
-check-setup: ## Run setup check (e.g. required binaries)
+check-setup:
 	@type rustup >/dev/null 2>&1 || (echo "Run 'curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh' first." >&2 ; exit 1)
 	@type rustc >/dev/null 2>&1 || (echo "Run 'curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh' first." >&2 ; exit 1)
 
@@ -46,6 +47,10 @@ coverage: ## Run code coverage generation
 
 test: ## Run dynamic tests
 	@cargo test
+
+license: ## Run analyzis of used licenses
+	@type cargo-license >/dev/null 2>&1 || (echo "Run 'cargo install cargo-license' first." >&2 ; exit 1)
+	@cargo-license
 
 lint: ## Run static tests
 	@cargo fix
