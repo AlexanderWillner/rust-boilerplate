@@ -23,5 +23,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 - Initial import
 
-[Unreleased]: https://github.com/AlexanderWillner/rust-boilerplate/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/AlexanderWillner/rust-boilerplate/releases/v1.0.0
+[Unreleased]: https://github.com/AlexanderWillner/rust-boilerplate/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/AlexanderWillner/rust-boilerplate/releases/1.0.0
