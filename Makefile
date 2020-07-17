@@ -11,7 +11,7 @@
 TARGET=target/debug/
 TARGET_HTML=html
 
-.PHONY: help license
+.PHONY: help license copyright
 
 help: ## Print help for each target
 	$(info Rust Makefile)
@@ -66,3 +66,6 @@ style: ## Run style code
 
 doc: ## Generate documentation
 	@cargo doc --target-dir docs
+
+copyright: ## Add copyright information to each file
+	@find . -iname "*.rs" -exec bash -c "if ! grep -q Copyright "{}"; then cat COPYRIGHT {} > {}.new && mv {}.new {} ; fi" \;
