@@ -1,3 +1,4 @@
+// Copyright by Alexander Willner. See the LICENCE file for the license information.
 //! First module
 
 #![warn(
